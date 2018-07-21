@@ -30,10 +30,10 @@ extension NSObject {
       let property = properties?[Int(i)];
       
       // retrieve the property name by calling property_getName function
-      let cname = property_getName(property);
+      let cname = property_getName(property!);
       
       // covert the c string into a Swift string
-      let name = String(cString: cname!);
+      let name = String(cString: cname);
       results.append(name);
     }
     

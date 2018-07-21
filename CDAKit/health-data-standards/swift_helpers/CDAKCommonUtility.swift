@@ -52,7 +52,7 @@ class CDAKCommonUtility {
           let rangeCount = match.numberOfRanges
           
           for group in 0..<rangeCount {
-            groupMatches.append((string as NSString).substring(with: match.rangeAt(group)))
+            groupMatches.append((string as NSString).substring(with: match.range(at: group)))
           }
         }
       }

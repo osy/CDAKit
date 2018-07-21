@@ -261,7 +261,7 @@ public struct CDAKCodedEntries : Collection, Sequence, CustomStringConvertible, 
     ///If you have supplied preferred code sets, you can then export the first matching preferred term for that set of code sets
     public var preferred_code: CDAKCodedEntry? {
         get {
-            return entries.flatMap({$0.1}).filter({preferred_code_sets.contains($0.codeSystem)}).sorted(by: {$0.0.code < $0.1.code}).first
+            return entries.flatMap({$0.1}).filter({preferred_code_sets.contains($0.codeSystem)}).sorted(by: {$0.code < $1.code}).first
         }
     }
 

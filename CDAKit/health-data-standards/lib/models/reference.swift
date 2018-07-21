@@ -61,7 +61,7 @@ open class CDAKReference: CDAKJSONInstantiable {
     if let entry = self.entry {
       if let record = entry.record {
         an_entry = (record.entries.filter({ e in
-          String(describing: type(of: e)) == referenced_type &&
+          String(describing: Swift.type(of: e)) == referenced_type &&
           e.identifier_as_string == referenced_id
         })).first
       }
@@ -74,7 +74,7 @@ open class CDAKReference: CDAKJSONInstantiable {
     if let entry = self.entry {
       if let record = entry.record {
         let resolved_reference = (record.entries.filter({ e in
-          String(describing: type(of: e)) == referenced_type &&
+          String(describing: Swift.type(of: e)) == referenced_type &&
             e.identifier_as_string == referenced_id
         })).first
         if let resolved_reference = resolved_reference {
