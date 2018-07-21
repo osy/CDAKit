@@ -1,0 +1,24 @@
+PODS:
+  - Fuzi (2.1.0)
+  - GRMustache.swift (2.0.0)
+  - Try (2.1.0)
+
+DEPENDENCIES:
+  - Fuzi (~> 2.1.0)
+  - GRMustache.swift (~> 2.0.0)
+  - Try (~> 2.1.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Fuzi
+    - GRMustache.swift
+    - Try
+
+SPEC CHECKSUMS:
+  Fuzi: 8c57344debff6d3a0c76a9e0f549152defdaaa48
+  GRMustache.swift: 8a547c12bea16052071b2b540af83d770075f0eb
+  Try: 68b27fa46dbb996ff08aa52731becaea9fe721c5
+
+PODFILE CHECKSUM: e6a6b6c3a47bd4e66465334b6c84f76d6d7e9740
+
+COCOAPODS: 1.5.3
