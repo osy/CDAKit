@@ -92,7 +92,7 @@ public struct CDAKCodedEntry: CustomStringConvertible, Equatable, Hashable {
   // MARK: Standard properties
   ///Debugging description
   public var description: String {
-    return ("codeSystem: \(codeSystem), codeSystemOid: \(codeSystemOid), code: \(code), displayName: \(displayName)")
+    return ("codeSystem: \(String(describing: codeSystem)), codeSystemOid: \(String(describing: codeSystemOid)), code: \(String(describing: code)), displayName: \(String(describing: displayName))")
   }
   
   ///hash value

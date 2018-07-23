@@ -40,12 +40,12 @@ open class CDAKPhysicalQuantityResultValue: CDAKResultValue {
   // MARK: Standard properties
   ///hash value for comparing objects
   override open var hashValue: Int {
-    return "\(scalar)\(units)".hashValue
+    return "\(scalar ?? "")\(units ?? "")".hashValue
   }
   
   ///Debugging description
   override open var description: String {
-    return "\(type(of: self)) => attributes: \(attributes), time: \(time), start_time: \(start_time), end_time: \(end_time), scalar: \(scalar), units: \(units)"
+    return "\(type(of: self)) => attributes: \(attributes), time: \(String(describing: time)), start_time: \(String(describing: start_time)), end_time: \(String(describing: end_time)), scalar: \(String(describing: scalar)), units: \(String(describing: units))"
   }
 
   

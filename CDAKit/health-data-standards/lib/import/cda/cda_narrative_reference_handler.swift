@@ -32,8 +32,8 @@ class CDAKImport_CDA_NarrativeReferenceHandler {
     var value = id_map[tag]
     //# Not sure why, but sometimes the reference is #<Reference> and the ID value is <Reference>, and
     //# sometimes it is #<Reference>.  We look for both.
-    if value == nil && tag.characters.first == "#" {
-      tag = String(tag.characters.dropFirst())
+    if value == nil && tag.first == "#" {
+      tag = String(tag.dropFirst())
       value = id_map[tag]
     }
     return value

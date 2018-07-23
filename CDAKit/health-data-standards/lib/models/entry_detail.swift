@@ -51,7 +51,7 @@ There is a recurring need to capture entry-like things witin an entry.  Instead 
       hv = hv ^ start_time.hashValue
       hv = hv ^ end_time.hashValue
     } else {
-      hv = hv ^ "\(time)".hashValue
+      hv = hv ^ "\(time ?? 0.0)".hashValue
     }
     
     return hv
@@ -60,7 +60,7 @@ There is a recurring need to capture entry-like things witin an entry.  Instead 
   // MARK: Standard properties
   ///Debugging description
   open var description : String {
-    return "\(type(of: self)) => codes: \(codes), cda_identifier: \(cda_identifier), time: \(time), start_time: \(start_time), end_time: \(end_time)"
+    return "\(type(of: self)) => codes: \(codes), cda_identifier: \(String(describing: cda_identifier)), time: \(String(describing: time)), start_time: \(String(describing: start_time)), end_time: \(String(describing: end_time))"
   }
 
  }

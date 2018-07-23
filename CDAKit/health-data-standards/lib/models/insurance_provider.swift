@@ -45,7 +45,7 @@ open class CDAKInsuranceProvider: CDAKEntry {
   // MARK: Standard properties
   ///Debugging description
   override open var description: String {
-    return super.description + ", name: \(name), type: \(type), member_id: \(member_id), relationship: \(relationship), financial_responsibility_type: \(financial_responsibility_type), financial_responsibility_type: \(financial_responsibility_type), payer: \(payer), guarantors: \(guarantors), subscriber: \(subscriber)"
+    return super.description + ", name: \(String(describing: name)), type: \(String(describing: type)), member_id: \(String(describing: member_id)), relationship: \(relationship), financial_responsibility_type: \(financial_responsibility_type), financial_responsibility_type: \(financial_responsibility_type), payer: \(String(describing: payer)), guarantors: \(guarantors), subscriber: \(String(describing: subscriber))"
   }
 
   

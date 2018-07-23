@@ -220,8 +220,8 @@ class CDAKImport_CDA_SectionImporter {
       person.family_name = name_element.xpath("./cda:family").first?.stringValue
       person.suffix = name_element.xpath("./cda:suffix").first?.stringValue
     }
-    person.addresses = person_element.xpath("./cda:addr").flatMap { addr in CDAKImport_CDA_LocatableImportUtils.import_address(addr) }
-    person.telecoms = person_element.xpath("./cda:telecom").flatMap { tele in CDAKImport_CDA_LocatableImportUtils.import_telecom(tele) }
+    person.addresses = person_element.xpath("./cda:addr").compactMap { addr in CDAKImport_CDA_LocatableImportUtils.import_address(addr) }
+    person.telecoms = person_element.xpath("./cda:telecom").compactMap { tele in CDAKImport_CDA_LocatableImportUtils.import_telecom(tele) }
     return person
   }
 

@@ -62,7 +62,7 @@ class CDAKImport_CDA_ProcedureImporter: CDAKImport_CDA_SectionImporter {
         case "ST":
           procedure.set_value(scalar_element.stringValue, units: nil)
       default:
-        print("CDAKProcedure importer -> extract_scalar() unknown scalar element detected \(scalar_element["xsi:type"])")
+        print("CDAKProcedure importer -> extract_scalar() unknown scalar element detected \(String(describing: scalar_element["xsi:type"]))")
       }
     }
   }

@@ -13,7 +13,7 @@ extension String {
 
   //http://stackoverflow.com/questions/24092884/get-nth-character-of-a-string-in-swift-programming-language
   subscript (i: Int) -> Character {
-    return self[self.characters.index(self.startIndex, offsetBy: i)]
+    return self[self.index(self.startIndex, offsetBy: i)]
   }
   
   subscript (i: Int) -> String {
@@ -21,7 +21,7 @@ extension String {
   }
   
   subscript (r: Range<Int>) -> String {
-    return substring(with: (characters.index(startIndex, offsetBy: r.lowerBound) ..< characters.index(startIndex, offsetBy: r.upperBound)))
+    return substring(with: (self.index(startIndex, offsetBy: r.lowerBound) ..< self.index(startIndex, offsetBy: r.upperBound)))
   }
 
     func index(from: Int) -> Index {
@@ -30,17 +30,17 @@ extension String {
 
     func substring(from: Int) -> String {
         let fromIndex = index(from: from)
-        return substring(from: fromIndex)
+        return self.substring(from: fromIndex)
     }
 
     func substring(to: Int) -> String {
         let toIndex = index(from: to)
-        return substring(to: toIndex)
+        return self.substring(to: toIndex)
     }
 
     func substring(with r: Range<Int>) -> String {
         let startIndex = index(from: r.lowerBound)
         let endIndex = index(from: r.upperBound)
-        return substring(with: startIndex..<endIndex)
+        return self.substring(with: startIndex..<endIndex)
     }
 }

@@ -33,7 +33,6 @@
 		3852E2FD1C8472B700F1B57D /* ccda_values.ccda.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 3852E2FC1C8472B700F1B57D /* ccda_values.ccda.mustache */; };
 		3852E2FF1C85E24B00F1B57D /* ccda_entry_detail_indication.ccda.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 3852E2FE1C85E24B00F1B57D /* ccda_entry_detail_indication.ccda.mustache */; };
 		3852E3011C8608D900F1B57D /* c32_indication.c32.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 3852E3001C8608D900F1B57D /* c32_indication.c32.mustache */; };
-		3852E3031C86188800F1B57D /* release-notes.md in Sources */ = {isa = PBXBuildFile; fileRef = 3852E3021C86188800F1B57D /* release-notes.md */; };
 		3852E3051C86270500F1B57D /* CDAKCodedEntriesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3852E3041C86270500F1B57D /* CDAKCodedEntriesTest.swift */; };
 		3852E3071C86387500F1B57D /* ccda_medication_precondition.ccda.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 3852E3061C86387400F1B57D /* ccda_medication_precondition.ccda.mustache */; };
 		3852E3091C863CF200F1B57D /* entry_detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3852E3081C863CF200F1B57D /* entry_detail.swift */; };
@@ -292,7 +291,6 @@
 		389172FA1C6CFD9100A31299 /* symptom_active_fragment.xml in Resources */ = {isa = PBXBuildFile; fileRef = 389172D01C6CFD9000A31299 /* symptom_active_fragment.xml */; };
 		389172FB1C6CFD9100A31299 /* tobacco_use_fragment.xml in Resources */ = {isa = PBXBuildFile; fileRef = 389172D11C6CFD9000A31299 /* tobacco_use_fragment.xml */; };
 		38BC98131C7C9F3400E8F2F4 /* CDAKRecordModels_Common.png in Resources */ = {isa = PBXBuildFile; fileRef = 38BC98121C7C9F3400E8F2F4 /* CDAKRecordModels_Common.png */; };
-		38BC98151C7C9F5600E8F2F4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 38BC98141C7C9F5600E8F2F4 /* README.md */; };
 		38BC98191C7CF19D00E8F2F4 /* CDAKitGithubLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 38BC98181C7CF19D00E8F2F4 /* CDAKitGithubLogo.png */; };
 		38BE32B61C80A652002AEC25 /* HL7CCD.sample.xml in Resources */ = {isa = PBXBuildFile; fileRef = 38BE32B51C80A652002AEC25 /* HL7CCD.sample.xml */; };
 		38BE32B81C80F5EB002AEC25 /* cda_social_history_importer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE32B71C80F5EB002AEC25 /* cda_social_history_importer.swift */; };
@@ -1689,7 +1687,6 @@
 				389170AE1C6CD7C800A31299 /* procedure.swift in Sources */,
 				384E23171C73C517009B9DED /* MetadataImporter.swift in Sources */,
 				389170AA1C6CD7C800A31299 /* organization.swift in Sources */,
-				38BC98151C7C9F5600E8F2F4 /* README.md in Sources */,
 				389170B11C6CD7C800A31299 /* provider.swift in Sources */,
 				389170F01C6CD86D00A31299 /* cda_section_importer.swift in Sources */,
 				3891711A1C6CD8A500A31299 /* CDAKUtility.swift in Sources */,
@@ -1739,7 +1736,6 @@
 				389170EA1C6CD86D00A31299 /* cda_medication_importer.swift in Sources */,
 				389170671C6CD7A500A31299 /* author.swift in Sources */,
 				389171051C6CD88A00A31299 /* ccda_social_history_importer.swift in Sources */,
-				3852E3031C86188800F1B57D /* release-notes.md in Sources */,
 				3852E30B1C864BC400F1B57D /* thing_with_identifier.swift in Sources */,
 				38BE32B81C80F5EB002AEC25 /* cda_social_history_importer.swift in Sources */,
 				389170C01C6CD7FF00A31299 /* code_system_helper.swift in Sources */,
@@ -1951,9 +1947,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ericwhitley.org.CDAKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = none;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -1974,9 +1971,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ericwhitley.org.CDAKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = none;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

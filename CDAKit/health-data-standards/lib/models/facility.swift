@@ -29,7 +29,7 @@ open class CDAKFacility: CDAKEntry {
   // MARK: Standard properties
   ///Debugging description
   override open var description: String {
-    return super.description + " name: \(name), addresss: \(addresses), telecoms: \(telecoms)"
+    return super.description + " name: \(String(describing: name)), addresss: \(addresses), telecoms: \(telecoms)"
   }
   
 }

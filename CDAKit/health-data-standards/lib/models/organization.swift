@@ -45,7 +45,7 @@ open class CDAKOrganization: CDAKJSONInstantiable, CustomStringConvertible, Equa
   // MARK: Standard properties
   ///Debugging description
   open var description: String {
-    return "CDAKOrganization => name: \(name), addresses: \(addresses), telecoms: \(telecoms)"
+    return "CDAKOrganization => name: \(String(describing: name)), addresses: \(addresses), telecoms: \(telecoms)"
   }
   
 }
@@ -55,7 +55,7 @@ extension CDAKOrganization {
     
     var hv: Int
     
-    hv = "\(name)".hashValue
+    hv = "\(name ?? "")".hashValue
     
     if addresses.count > 0 {
       hv = hv ^ "\(addresses)".hashValue

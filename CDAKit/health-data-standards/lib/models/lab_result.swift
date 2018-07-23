@@ -30,7 +30,7 @@ open class CDAKLabResult: CDAKEntry {
   // MARK: Standard properties
   ///Debugging description
   override open var description: String {
-    return super.description + " reference_range: \(reference_range), reference_range_high: \(reference_range_high), reference_range_low: \(reference_range_low), interpretation: \(interpretation), reaction: \(reaction), method: \(method)"
+    return super.description + " reference_range: \(String(describing: reference_range)), reference_range_high: \(String(describing: reference_range_high)), reference_range_low: \(String(describing: reference_range_low)), interpretation: \(interpretation), reaction: \(reaction), method: \(method)"
   }
 
   

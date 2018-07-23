@@ -44,7 +44,7 @@ open class CDAKFulfillmentHistory: CDAKEntry {
   // MARK: Standard properties
   ///Debugging description
   override open var description: String {
-    return super.description + " , prescription_number: \(prescription_number), dispense_date: \(dispense_date), fill_number: \(fill_number), fill_status: \(fill_status), quantity_dispensed: \(quantity_dispensed)"
+    return super.description + " , prescription_number: \(String(describing: prescription_number)), dispense_date: \(String(describing: dispense_date)), fill_number: \(String(describing: fill_number)), fill_status: \(String(describing: fill_status)), quantity_dispensed: \(quantity_dispensed)"
   }
 
 }

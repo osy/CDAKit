@@ -151,7 +151,7 @@ open class CDAKProvider: CDAKPersonable, CDAKJSONInstantiable, Hashable, Equatab
     guard var npi = npi else {
       return false
     }
-    if npi.characters.count != 10 && npi.characters.count != 15 {
+    if npi.count != 10 && npi.count != 15 {
       return false
     }
     //return false if npi.gsub(/\d/, '').length > 0 # npi must be all digits
@@ -159,12 +159,12 @@ open class CDAKProvider: CDAKPersonable, CDAKJSONInstantiable, Hashable, Equatab
       return false
     }
     //return false if npi.length == 15 and (npi =~ /^80840/)==nil # 15 digit npi must start with 80840
-    if npi.characters.count == 15 && !npi.hasPrefix("80840") {
+    if npi.count == 15 && !npi.hasPrefix("80840") {
       return false
     }
     
     //# checksum is always calculated as if 80840 prefix is present
-    if npi.characters.count == 10 {
+    if npi.count == 10 {
         npi = "80840" + npi
     }
 
@@ -180,9 +180,9 @@ open class CDAKProvider: CDAKPersonable, CDAKJSONInstantiable, Hashable, Equatab
   class func luhn_checksum(_ num: String) -> String {
     let double: [Character:Int] = ["0":0, "1":2, "2":4, "3":6, "4":8, "5":1, "6":3, "7":5, "8":7, "9":9]
     var sum = 0
-    let reversed_num = String(num.characters.reversed())
+    let reversed_num = String(num.reversed())
     //num.split("").each_with_index do |char, i|
-    for (i, char) in reversed_num.characters .enumerated() {
+    for (i, char) in reversed_num.enumerated() {
       if (i%2) == 0 {
         sum += double[char]!
       } else {
@@ -223,7 +223,7 @@ open class CDAKProvider: CDAKPersonable, CDAKJSONInstantiable, Hashable, Equatab
   // MARK: Standard properties
   ///Debugging description
   open var description: String {
-    return "Provider => prefix: \(prefix), given_name: \(given_name), family_name: \(family_name), suffix: \(suffix), npi: \(npi), specialty: \(specialty), phone: \(phone), organization: \(organization), cda_identifiers: \(cda_identifiers), addresses: \(addresses), telecoms: \(telecoms), code: \(code)"
+    return "Provider => prefix: \(String(describing: prefix)), given_name: \(String(describing: given_name)), family_name: \(String(describing: family_name)), suffix: \(String(describing: suffix)), npi: \(String(describing: npi)), specialty: \(String(describing: specialty)), phone: \(String(describing: phone)), organization: \(String(describing: organization)), cda_identifiers: \(cda_identifiers), addresses: \(addresses), telecoms: \(telecoms), code: \(String(describing: code))"
   }
 
   
@@ -251,7 +251,7 @@ extension CDAKProvider {
     
     var hv: Int
     
-    hv = "\(prefix)\(given_name)\(family_name)\(specialty)\(phone)".hashValue
+    hv = "\(prefix ?? "")\(given_name ?? "")\(family_name ?? "")\(specialty ?? "")\(phone ?? "")".hashValue
     
     if addresses.count > 0 {
       hv = hv ^ "\(addresses)".hashValue

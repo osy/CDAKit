@@ -266,7 +266,7 @@ class HealthKitRecordTest: XCTestCase {
   func testCustomBridgeCDAStringFinder() {
     //var cdaStringUnitFinder : ((unit_string: String?, typeIdentifier: String? ) -> HKUnit?)?
     
-    var cdaStringUnitFinder_nil : ((_ unit_string: String?, _ typeIdentifier: String? ) -> HKUnit?) = {
+    let cdaStringUnitFinder_nil : ((_ unit_string: String?, _ typeIdentifier: String? ) -> HKUnit?) = {
       (unit_string: String?, typeIdentifier: String?) -> HKUnit? in
       
       return nil
@@ -284,7 +284,7 @@ class HealthKitRecordTest: XCTestCase {
 
     XCTAssertNil(hk_hrEntry_nil)
     
-    var cdaStringUnitFinder : ((_ unit_string: String?, _ typeIdentifier: String? ) -> HKUnit?) = {
+    let cdaStringUnitFinder : ((_ unit_string: String?, _ typeIdentifier: String? ) -> HKUnit?) = {
       (unit_string: String?, typeIdentifier: String?) -> HKUnit? in
       
       if unit_string == "beats" {

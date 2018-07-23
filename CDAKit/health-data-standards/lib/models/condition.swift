@@ -63,7 +63,7 @@ open class CDAKCondition: CDAKEntry {
   // MARK: Standard properties
   ///Debugging description
   override open var description: String {
-    return super.description + " name: \(name), type: \(type), cause_of_death: \(cause_of_death), time_of_death: \(time_of_death), priority: \(priority), ordinality: \(ordinality), severity: \(severity), laterality: \(laterality), anatomical_target: \(anatomical_target), anatomical_location: \(anatomical_location)"
+    return super.description + " name: \(String(describing: name)), type: \(String(describing: type)), cause_of_death: \(String(describing: cause_of_death)), time_of_death: \(String(describing: time_of_death)), priority: \(String(describing: priority)), ordinality: \(ordinality), severity: \(severity), laterality: \(laterality), anatomical_target: \(anatomical_target), anatomical_location: \(anatomical_location)"
   }
   
 }

@@ -46,7 +46,7 @@ open class CDAKCDAIdentifier: Equatable, Hashable, CDAKJSONInstantiable, CustomS
   open var extension_id: String?
   
   open var hashValue: Int {
-    return "\(root)\(extension_id)".hashValue
+    return "\(root ?? "")\(extension_id ?? "")".hashValue
   }
   
   ///Attempts to return a simplified compound version of the Root and Extension
@@ -60,14 +60,14 @@ open class CDAKCDAIdentifier: Equatable, Hashable, CDAKJSONInstantiable, CustomS
       if let extension_id = extension_id {
         e = extension_id
       }
-      return "\(r)\(r.characters.count > 0 && e.characters.count > 0 ? " " : "")\(e)"
+      return "\(r)\(r.count > 0 && e.count > 0 ? " " : "")\(e)"
     }
   }
   
   // MARK: Standard properties
   ///Debugging description
   open var description: String {
-    return "CDAKCDAIdentifier => root: \(root), extension_id: \(extension_id)"
+    return "CDAKCDAIdentifier => root: \(String(describing: root)), extension_id: \(String(describing: extension_id))"
   }
   
   // MARK: - Initializers

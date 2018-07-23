@@ -93,7 +93,7 @@ open class CDAKProviderPerformance: CDAKEntry {
   // MARK: Standard properties
   ///Debugging description
   override open var description: String {
-    return "\(type(of: self)) => start_date:\(start_date), end_date:\(end_date), functionCode:\(functionCode), provider:\(provider)"
+    return "\(type(of: self)) => start_date:\(String(describing: start_date)), end_date:\(String(describing: end_date)), functionCode:\(String(describing: functionCode)), provider:\(String(describing: provider))"
   }
   
 }

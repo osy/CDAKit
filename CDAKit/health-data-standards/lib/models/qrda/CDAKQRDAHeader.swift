@@ -25,7 +25,7 @@ open class CDAKQRDAHeader {
 
 extension CDAKQRDAHeader: CustomStringConvertible {
   public var description: String {
-    return "CDAKQRDAHeader => identifier:\(identifier), authors:\(authors), custodian:\(custodian), legal_authenticator:\(legal_authenticator), performers:\(performers), time:\(time), confidentiality: \(confidentiality)"
+    return "CDAKQRDAHeader => identifier:\(String(describing: identifier)), authors:\(authors), custodian:\(String(describing: custodian)), legal_authenticator:\(String(describing: legal_authenticator)), performers:\(performers), time:\(time), confidentiality: \(confidentiality)"
   }
 }
 

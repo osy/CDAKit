@@ -45,7 +45,7 @@ class CDAKCommonUtility {
 
       do {
         let regex = try NSRegularExpression(pattern: pattern, options: [])
-        let range = NSMakeRange(0, string.characters.count)
+        let range = NSMakeRange(0, string.count)
         let matches = regex.matches(in: string, options: [], range: range)
         
         for match in matches {
@@ -66,7 +66,7 @@ class CDAKCommonUtility {
     class func replaceMatches(_ pattern: String, inString string: String, withString replacementString: String) -> String? {
       do {
         let regex = try NSRegularExpression(pattern: pattern, options: [])
-        let range = NSMakeRange(0, string.characters.count)
+        let range = NSMakeRange(0, string.count)
         
         return regex.stringByReplacingMatches(in: string, options: [], range: range, withTemplate: replacementString)
       }
@@ -79,7 +79,7 @@ class CDAKCommonUtility {
     class func listMatches(_ pattern: String, inString string: String) -> [String] {
       do {
         let regex = try NSRegularExpression(pattern: pattern, options: [])
-        let range = NSMakeRange(0, string.characters.count)
+        let range = NSMakeRange(0, string.count)
         let matches = regex.matches(in: string, options: [], range: range)
         
         return matches.map {
@@ -96,7 +96,7 @@ class CDAKCommonUtility {
     class func containsMatch(_ pattern: String, inString string: String) -> Bool {
       do {
         let regex = try NSRegularExpression(pattern: pattern, options: [] )
-        let range = NSMakeRange(0, string.characters.count)
+        let range = NSMakeRange(0, string.count)
         return regex.firstMatch(in: string, options: [], range: range) != nil
       }
       catch {

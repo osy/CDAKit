@@ -81,7 +81,7 @@ class CDAKUtility {
   class func singleCodeFieldFlat(_ value: Any?, withDefaultCodeSystem defaultCodeSystem: String? = nil) -> CDAKCodedEntries {
     var result: CDAKCodedEntries = CDAKCodedEntries()
     //print(value)
-    print("singleCodeFieldFlat:value = \(value)")
+    print("singleCodeFieldFlat:value = \(String(describing: value))")
     if let value = value as? [String:Any?] {
       if let val = value["code"] {
         if let val = val { //still optional
@@ -112,7 +112,7 @@ class CDAKUtility {
   //I feel so very very dirty.  And yes - I realize how bad this code is.
   class func dictionaryStringArray(_ value: Any?, withDefaultCodeSystem defaultCodeSystem: String? = nil) -> CDAKCodedEntries {
     var result: CDAKCodedEntries = CDAKCodedEntries()
-    print("dictionaryStringArray:value = \(value)")
+    print("dictionaryStringArray:value = \(String(describing: value))")
     if let value = value as? CDAKCodedEntries { return value }
 //    else if let value = value as? [String:Any] {
 //      print("dictionaryStringArray:value = \(value) WITH TYPE [String:Any]")
@@ -368,7 +368,6 @@ class CDAKUtility {
     } else if let obj = obj as? CDAKCondition {
       switch property {
       case "time_of_death": obj.time_of_death = doubleValue(value)
-      case "severity": obj.severity = dictionaryStringArray(value)
 
         //NOT ordinatlity - apparently that's a string in the source?
       case "ordinality_code": obj.ordinality = dictionaryStringArray(value)
@@ -605,7 +604,6 @@ class CDAKUtility {
       
       case "type": obj.type = stringValue(value)
       case "member_id": obj.member_id = stringValue(value)
-      case "name": obj.name = stringValue(value)
 
       //var relationship = [String:String]() //, type: Hash
       //var financial_responsibility_type = [String:String]() //, type: Hash

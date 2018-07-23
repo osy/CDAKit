@@ -5,20 +5,29 @@ PODS:
 
 DEPENDENCIES:
   - Fuzi (~> 2.1.0)
-  - GRMustache.swift (~> 2.0.0)
+  - GRMustache.swift (from `https://github.com/chrisballinger/GRMustache.swift`, branch `feature/swift4`)
   - Try (~> 2.1.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Fuzi
-    - GRMustache.swift
     - Try
+
+EXTERNAL SOURCES:
+  GRMustache.swift:
+    :branch: feature/swift4
+    :git: https://github.com/chrisballinger/GRMustache.swift
+
+CHECKOUT OPTIONS:
+  GRMustache.swift:
+    :commit: 2603bb12d67c312ef17ecc755cb40cd77bf386ad
+    :git: https://github.com/chrisballinger/GRMustache.swift
 
 SPEC CHECKSUMS:
   Fuzi: 8c57344debff6d3a0c76a9e0f549152defdaaa48
-  GRMustache.swift: 8a547c12bea16052071b2b540af83d770075f0eb
+  GRMustache.swift: 53405b02c374520f9193cf41bfa677f03a6d70aa
   Try: 68b27fa46dbb996ff08aa52731becaea9fe721c5
 
-PODFILE CHECKSUM: e6a6b6c3a47bd4e66465334b6c84f76d6d7e9740
+PODFILE CHECKSUM: be047a00c6bebd35c1dc91c41524c9ce3bcc137c
 
 COCOAPODS: 1.5.3

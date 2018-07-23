@@ -20,7 +20,7 @@ open class CDAKReason: CDAKEntry {
   // MARK: Standard properties
   ///Debugging description
   override open var description: String {
-    return "CDAKReason => description: \(item_description), codes: \(codes)"
+    return "CDAKReason => description: \(String(describing: item_description)), codes: \(codes)"
   }
   
 }

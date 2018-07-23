@@ -39,9 +39,9 @@ open class CDAKAddress: NSObject, CDAKJSONInstantiable {
   */
   open var is_empty: Bool {
     
-    let someText: String = "\(street.flatMap({$0}).joined(separator: ""))\(city ?? "")\(state ?? "")\(zip ?? "")\(country ?? "")".trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+    let someText: String = "\(street.compactMap({$0}).joined(separator: ""))\(city ?? "")\(state ?? "")\(zip ?? "")\(country ?? "")".trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     
-    if someText.characters.count > 0 {
+    if someText.count > 0 {
       return false
     }
     
@@ -80,7 +80,7 @@ open class CDAKAddress: NSObject, CDAKJSONInstantiable {
   // MARK: Standard properties
   ///Debugging description
   override open var description: String {
-    return "CDAKAddress => street: \(street), city: \(city), state: \(state), zip: \(zip), country: \(country), use: \(use)"
+    return "CDAKAddress => street: \(street), city: \(String(describing: city)), state: \(String(describing: state)), zip: \(String(describing: zip)), country: \(String(describing: country)), use: \(String(describing: use))"
   }
   
 }

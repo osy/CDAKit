@@ -25,8 +25,8 @@ open class CDAKGuarantor: CDAKEntry {
 
   // MARK: Standard properties
   ///Debugging description
-  override open var description: String {
-    return super.description + " person: \(person), organization: \(organization)"
+    override open var description: String {
+        return super.description + " person: \(String(describing: person)), organization: \(String(describing: organization))"
   }
   
 }

@@ -20,7 +20,7 @@ open class CDAKQRDALegalAuthenticator {
 
 extension CDAKQRDALegalAuthenticator: CustomStringConvertible {
   public var description: String {
-    return "CDAKQRDALegalAuthenticator => time:\(time), ids:\(ids), addresses:\(addresses), telecoms:\(telecoms), person:\(person), organization: \(organization)"
+    return "CDAKQRDALegalAuthenticator => time:\(time), ids:\(ids), addresses:\(addresses), telecoms:\(telecoms), person:\(String(describing: person)), organization: \(String(describing: organization))"
   }
 }
 

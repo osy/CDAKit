@@ -411,7 +411,7 @@ open class CDAKEntry: NSObject , CDAKThingWithCodes, CDAKPropertyAddressable, CD
       hv = hv ^ start_time.hashValue
       hv = hv ^ end_time.hashValue
     } else {
-      hv = hv ^ "\(time)".hashValue
+        hv = hv ^ "\(time ?? 0.0)".hashValue
     }
     
     if let status = status {
@@ -493,7 +493,7 @@ open class CDAKEntry: NSObject , CDAKThingWithCodes, CDAKPropertyAddressable, CD
   // MARK: Standard properties
   ///Debugging description
   override open var description : String {
-    return "\(type(of: self)) => codes: \(codes), cda_identifier: \(identifier_as_string), values: \(values), references: \(references), provider_preference: \(provider_preference), patient_preference: \(patient_preference), item_description: \(item_description), specifics: \(specifics), time: \(time), start_time: \(start_time), end_time: \(end_time), status_code: \(status_code), mood_code: \(mood_code), negation_ind: \(negation_ind), negation_reason: \(negation_reason), oid: \(oid), reason: \(reason), version: \(version), id: \(id), created_at: \(created_at), updated_at: \(updated_at)"
+    return "\(type(of: self)) => codes: \(codes), cda_identifier: \(identifier_as_string), values: \(values), references: \(references), provider_preference: \(provider_preference), patient_preference: \(patient_preference), item_description: \(String(describing: item_description)), specifics: \(String(describing: specifics)), time: \(String(describing: time)), start_time: \(String(describing: start_time)), end_time: \(String(describing: end_time)), status_code: \(status_code), mood_code: \(mood_code), negation_ind: \(String(describing: negation_ind)), negation_reason: \(negation_reason), oid: \(String(describing: oid)), reason: \(String(describing: reason)), version: \(version), id: \(String(describing: id)), created_at: \(created_at), updated_at: \(updated_at)"
   }
   
 }
@@ -542,12 +542,12 @@ extension CDAKEntry {
     }
   }
 
-  var code_display : String {
+  @objc var code_display : String {
     return ViewHelper.code_display(self, options: ["preferred_code_sets":self.preferred_code_sets])
   }
   
   // MARK: - Mustache marshalling
-  var boxedValues: [String:MustacheBox] {
+  @objc var boxedValues: [String:MustacheBox] {
     
     
     //find a preferred term using a specified vocabulary
@@ -617,7 +617,7 @@ extension CDAKEntry {
 extension CDAKEntry {
   // MARK: - JSON Generation
   ///Dictionary for JSON data
-  public var jsonDict: [String: AnyObject] {
+  @objc public var jsonDict: [String: AnyObject] {
     var dict: [String: AnyObject] = [:]
     
     if codes.count > 0 {

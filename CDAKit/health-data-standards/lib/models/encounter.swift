@@ -75,7 +75,7 @@ open class CDAKEncounter: CDAKEntry {
   // MARK: Standard properties
   ///Debugging description
   override open var description: String {
-    return super.description + " , admit_type: \(admit_type), discharge_disposition: \(discharge_disposition), admit_time: \(admit_time), discharge_time: \(discharge_time), principal_diagnosis: \(principal_diagnosis), transfer_to: \(transfer_to), transfer_from: \(transfer_from), facility: \(facility), performer: \(performer)"
+    return super.description + " , admit_type: \(admit_type), discharge_disposition: \(discharge_disposition), admit_time: \(String(describing: admit_time)), discharge_time: \(String(describing: discharge_time)), principal_diagnosis: \(principal_diagnosis), transfer_to: \(String(describing: transfer_to)), transfer_from: \(String(describing: transfer_from)), facility: \(String(describing: facility)), performer: \(String(describing: performer))"
   }
   
 }

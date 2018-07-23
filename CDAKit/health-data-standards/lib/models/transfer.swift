@@ -23,7 +23,7 @@ open class CDAKTransfer: CDAKThingWithCodes, CustomStringConvertible {
   // MARK: Standard properties
   ///Debugging description
   open var description : String {
-    return "CDAKTransfer => time: \(time), codes: \(codes)"
+    return "CDAKTransfer => time: \(String(describing: time)), codes: \(codes)"
   }
 }
 

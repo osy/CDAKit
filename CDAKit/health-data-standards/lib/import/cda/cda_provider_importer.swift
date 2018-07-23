@@ -96,13 +96,13 @@ class CDAKImport_CDA_ProviderImporter {
       
       //# NIST sample C32s use different OID for NPI vs C83, support both
       let npi  = extract_data(entity, query: "./cda:id[@root='2.16.840.1.113883.4.6' or @root='2.16.840.1.113883.3.72.5.2']/@extension")
-      provider_data["addresses"] = performer.xpath("./cda:assignedEntity/cda:addr").flatMap { ae in CDAKImport_CDA_LocatableImportUtils.import_address(ae)}
-      provider_data["telecoms"] = performer.xpath("./cda:assignedEntity/cda:telecom").flatMap { te in CDAKImport_CDA_LocatableImportUtils.import_telecom(te)}
+        provider_data["addresses"] = performer.xpath("./cda:assignedEntity/cda:addr").compactMap { ae in CDAKImport_CDA_LocatableImportUtils.import_address(ae)}
+        provider_data["telecoms"] = performer.xpath("./cda:assignedEntity/cda:telecom").compactMap { te in CDAKImport_CDA_LocatableImportUtils.import_telecom(te)}
       
       if CDAKProvider.valid_npi(npi) {
         provider_data["npi"] = npi
       } else {
-        print("Invalid NPI '\(npi)' found. Including NPI, but please validate.")
+        print("Invalid NPI '\(String(describing: npi))' found. Including NPI, but please validate.")
         if npi != "nil" {
           provider_data["npi"] = npi
         }

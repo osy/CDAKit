@@ -62,7 +62,7 @@ open class CDAKExport {
         rendering = try template.render(Box(data))
       }
       catch let error as MustacheError {
-        print("Failed to process template. Line \(error.lineNumber) - \(error.kind). Error: \(error.description)")
+        print("Failed to process template. Line \(String(describing: error.lineNumber)) - \(error.kind). Error: \(error.description)")
       }
       catch let error as NSError {
         print(error.localizedDescription)

@@ -235,8 +235,8 @@ class CDAKImport_C32_PatientImporter {
     }
 
 
-    patient.addresses = patient_role_element.xpath("./cda:addr").flatMap({addr in CDAKImport_CDA_LocatableImportUtils.import_address(addr)})
-    patient.telecoms = patient_role_element.xpath("./cda:telecom").flatMap({telecom in CDAKImport_CDA_LocatableImportUtils.import_telecom(telecom)})
+    patient.addresses = patient_role_element.xpath("./cda:addr").compactMap({addr in CDAKImport_CDA_LocatableImportUtils.import_address(addr)})
+    patient.telecoms = patient_role_element.xpath("./cda:telecom").compactMap({telecom in CDAKImport_CDA_LocatableImportUtils.import_telecom(telecom)})
   }
   
 }

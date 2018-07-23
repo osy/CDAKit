@@ -17,8 +17,8 @@ class CDAKImport_CDA_OrganizationImporter {
     }
     let org = CDAKOrganization()
     org.name = org_element.xpath("./cda:name | ./cda:representedOrganization/cda:name").first?.stringValue
-    org.addresses = org_element.xpath("./cda:addr").flatMap { addr in CDAKImport_CDA_LocatableImportUtils.import_address(addr) }
-    org.telecoms = org_element.xpath("./cda:telecom").flatMap { tele in CDAKImport_CDA_LocatableImportUtils.import_telecom(tele) }
+    org.addresses = org_element.xpath("./cda:addr").compactMap { addr in CDAKImport_CDA_LocatableImportUtils.import_address(addr) }
+    org.telecoms = org_element.xpath("./cda:telecom").compactMap { tele in CDAKImport_CDA_LocatableImportUtils.import_telecom(tele) }
     
     return org
   }

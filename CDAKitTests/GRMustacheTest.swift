@@ -196,7 +196,7 @@ class GRMustacheTest: XCTestCase {
   func testFilter() {
     
     let reverse = Filter { (rendering: Rendering) in
-      let reversedString = String(rendering.string.characters.reversed())
+      let reversedString = String(rendering.string.reversed())
       return Rendering(reversedString, rendering.contentType)
     }
 
@@ -720,7 +720,7 @@ class GRMustacheTest: XCTestCase {
 
     var header: CDAKQRDAHeader?
     var records: [CDAKRecord] = []
-    var files: [String] = ["Patient-673", "Vitera_CCDA_SMART_Sample", "export_cda"]
+    let files: [String] = ["Patient-673", "Vitera_CCDA_SMART_Sample", "export_cda"]
     
 
     for file in files {

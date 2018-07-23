@@ -29,7 +29,7 @@ open class CDAKResultValue: NSObject, CDAKThingWithTimes {
   // MARK: Standard properties
   ///Debugging description
   override open var description: String {
-    return "\(type(of: self)) => attributes: \(attributes), time: \(time), start_time: \(start_time), end_time: \(end_time)"
+    return "\(type(of: self)) => attributes: \(attributes), time: \(String(describing: time)), start_time: \(String(describing: start_time)), end_time: \(String(describing: end_time))"
   }
   
 }
@@ -37,7 +37,7 @@ open class CDAKResultValue: NSObject, CDAKThingWithTimes {
 extension CDAKResultValue: CDAKJSONExportable {
   // MARK: - JSON Generation
   ///Dictionary for JSON data
-  public var jsonDict: [String: AnyObject] {
+  @objc public var jsonDict: [String: AnyObject] {
     var dict: [String: AnyObject] = [:]
     
     if let time = time {

@@ -17,7 +17,7 @@ open class CDAKQRDACustodian {
 
 extension CDAKQRDACustodian: CustomStringConvertible {
   public var description: String {
-    return "CDAKQRDACustodian => ids:\(ids), person:\(person), organization:\(organization)"
+    return "CDAKQRDACustodian => ids:\(ids), person:\(String(describing: person)), organization:\(String(describing: organization))"
   }
 }
 

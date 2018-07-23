@@ -328,7 +328,7 @@ open class CDAKHealthKitBridge {
    */
   open func sampleForEntry(_ entry: CDAKEntry, forSampleType sampleType: CDAKHKQuantityIdentifiers? = nil, withHKMetadata meta: [String:AnyObject] = [:]) -> HKQuantitySample? {
 
-    print("evaluating entry \(type(of: entry)) with codes \(entry.codes) and value \(entry.values.first)")
+    print("evaluating entry \(type(of: entry)) with codes \(entry.codes) and value \(String(describing: entry.values.first))")
 
     if let sampleType = sampleType {
       return sampleForEntryValue(entry, allowedCodeList:
@@ -518,14 +518,14 @@ open class CDAKHealthKitBridge {
                         }
                     }
                 } else {
-                    if let _error = error as? NSError {
+                    if let _error = error as NSError? {
                         switch _error.code {
                         case 5:
                             if let id = CDAKHKQuantityIdentifiers(rawValue: sampleType.identifier) {
-                                print("Access to sample \(sampleType.identifier) denied - using default unit \(self.CDAKHKQuantityTypeDefaultUnits[id])")
+                                print("Access to sample \(sampleType.identifier) denied - using default unit \(String(describing: self.CDAKHKQuantityTypeDefaultUnits[id]))")
                             }
                         default:
-                            print("Error accessing user sample types. \(error?.localizedDescription)")
+                            print("Error accessing user sample types. \(String(describing: error?.localizedDescription))")
                         }
                     }
 
@@ -926,9 +926,9 @@ open class CDAKHKRecord: CustomStringConvertible {
     }
 
     //For now we're just going to manually choose which entries we add
-    samples.append( contentsOf: patient.vital_signs.flatMap( { CDAKHealthKitBridge.sharedInstance.sampleForEntry($0, withHKMetadata: self.metadata)} ) )
-    samples.append( contentsOf: patient.results.flatMap( { CDAKHealthKitBridge.sharedInstance.sampleForEntry($0, withHKMetadata: self.metadata)} ) )
-    samples.append( contentsOf: patient.procedures.flatMap( { CDAKHealthKitBridge.sharedInstance.sampleForEntry($0, withHKMetadata: self.metadata)} ) )
+    samples.append( contentsOf: patient.vital_signs.compactMap( { CDAKHealthKitBridge.sharedInstance.sampleForEntry($0, withHKMetadata: self.metadata)} ) )
+    samples.append( contentsOf: patient.results.compactMap( { CDAKHealthKitBridge.sharedInstance.sampleForEntry($0, withHKMetadata: self.metadata)} ) )
+    samples.append( contentsOf: patient.procedures.compactMap( { CDAKHealthKitBridge.sharedInstance.sampleForEntry($0, withHKMetadata: self.metadata)} ) )
 
     
     
@@ -956,7 +956,7 @@ open class CDAKHKRecord: CustomStringConvertible {
   
   ///Debugging description
   open var description: String {
-    return "CDAKHKRecord => prefix: \(prefix), first: \(first), last: \(last), suffix: \(suffix), gender: \(gender), birthdate: \(birthdate), deathdate: \(deathdate), samples: \(samplesDescription) "
+    return "CDAKHKRecord => prefix: \(String(describing: prefix)), first: \(String(describing: first)), last: \(String(describing: last)), suffix: \(String(describing: suffix)), gender: \(String(describing: gender)), birthdate: \(String(describing: birthdate)), deathdate: \(String(describing: deathdate)), samples: \(samplesDescription) "
   }
   
 }

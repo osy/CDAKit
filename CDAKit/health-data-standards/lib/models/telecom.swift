@@ -31,7 +31,7 @@ open class CDAKTelecom: NSObject, CDAKJSONInstantiable {
     
     let someText: String = "\(value ?? "")".trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     
-    if someText.characters.count > 0 {
+    if someText.count > 0 {
       return false
     }
     return true
@@ -68,7 +68,7 @@ open class CDAKTelecom: NSObject, CDAKJSONInstantiable {
   // MARK: Standard properties
   ///Debugging description
   open override var description: String {
-    return "CDAKTelecom => use: \(use), value: \(value), preferred: \(preferred)"
+    return "CDAKTelecom => use: \(String(describing: use)), value: \(String(describing: value)), preferred: \(String(describing: preferred))"
   }
 
   
