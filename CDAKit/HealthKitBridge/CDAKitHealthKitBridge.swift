@@ -944,7 +944,7 @@ open class CDAKHKRecord: CustomStringConvertible {
   /**
    Basic empty initializer
   */
-  init() {
+  public init() {
     
   }
   
