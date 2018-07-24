@@ -11,7 +11,6 @@ import Foundation
 
 extension String {
 
-  //http://stackoverflow.com/questions/24092884/get-nth-character-of-a-string-in-swift-programming-language
   subscript (i: Int) -> Character {
     return self[self.index(self.startIndex, offsetBy: i)]
   }
