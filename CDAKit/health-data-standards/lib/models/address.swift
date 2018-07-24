@@ -80,7 +80,7 @@ open class CDAKAddress: NSObject, CDAKJSONInstantiable {
   // MARK: Standard properties
   ///Debugging description
   override open var description: String {
-    return "CDAKAddress => street: \(street), city: \(String(describing: city)), state: \(String(describing: state)), zip: \(String(describing: zip)), country: \(String(describing: country)), use: \(String(describing: use))"
+    return "CDAKAddress => street: \(street), city: \(city ?? ""), state: \(state ?? ""), zip: \(zip ?? ""), country: \(country ?? ""), use: \(use ?? "")"
   }
   
 }

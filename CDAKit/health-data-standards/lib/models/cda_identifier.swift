@@ -67,7 +67,7 @@ open class CDAKCDAIdentifier: Equatable, Hashable, CDAKJSONInstantiable, CustomS
   // MARK: Standard properties
   ///Debugging description
   open var description: String {
-    return "CDAKCDAIdentifier => root: \(String(describing: root)), extension_id: \(String(describing: extension_id))"
+    return "CDAKCDAIdentifier => root: \(root ?? ""), extension_id: \(extension_id ?? "")"
   }
   
   // MARK: - Initializers

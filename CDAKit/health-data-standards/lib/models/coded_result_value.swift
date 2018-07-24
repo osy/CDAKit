@@ -23,7 +23,7 @@ open class CDAKCodedResultValue: CDAKResultValue, CDAKThingWithCodes {
   // MARK: Standard properties
   ///Debugging description
   override open var description: String {
-    return "\(type(of: self)) => attributes: \(attributes), time: \(String(describing: time)), start_time: \(String(describing: start_time)), end_time: \(String(describing: end_time)), item_description: \(String(describing: item_description)), codes: \(codes)"
+    return "\(type(of: self)) => attributes: \(attributes), time: \(time?.description ?? ""), start_time: \(start_time?.description ?? ""), end_time: \(end_time?.description ?? ""), item_description: \(item_description ?? ""), codes: \(codes)"
   }
 
 }

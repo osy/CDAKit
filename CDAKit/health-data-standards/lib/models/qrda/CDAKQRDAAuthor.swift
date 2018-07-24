@@ -21,7 +21,8 @@ open class CDAKQRDAAuthor {
 
 extension CDAKQRDAAuthor: CustomStringConvertible {
   public var description: String {
-    return "CDAKQRDAAuthor => time:\(time), ids:\(ids), addresses:\(addresses), telecoms:\(telecoms), person:\(String(describing: person)), device:\(String(describing: device)), organization: \(String(describing: organization))"
+    
+    return "CDAKQRDAAuthor => time:\(time), ids:\(ids), addresses:\(addresses), telecoms:\(telecoms), person:\(person?.description ?? "nil"), device:\(device?.description ?? "nil")), organization: \(organization?.description ?? "nil"))"
   }
 }
 

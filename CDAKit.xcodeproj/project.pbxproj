@@ -308,6 +308,7 @@
 		38FCF8DC1C75039A0040979E /* cat1_header_no_header.cat1.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 38FCF8DB1C75039A0040979E /* cat1_header_no_header.cat1.mustache */; };
 		902E92565FF505C545AB58D8 /* Pods_CDAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FDAC72237DF962DB8F4084C /* Pods_CDAKit.framework */; };
 		B648D91DC0D0A5DA1C8A7861 /* Pods_CDAKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2659CE5B586D31D29E7610E8 /* Pods_CDAKitTests.framework */; };
+		EF903A88210653B700E936C5 /* SynchronizedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF903A87210653B700E936C5 /* SynchronizedArray.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -632,6 +633,7 @@
 		7FDAC72237DF962DB8F4084C /* Pods_CDAKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CDAKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3721CB6B043AD64FC0ED757 /* Pods-CDAKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDAKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CDAKitTests/Pods-CDAKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E4B275D491AE4CABC47FF7B2 /* Pods-CDAKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDAKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CDAKit/Pods-CDAKit.debug.xcconfig"; sourceTree = "<group>"; };
+		EF903A87210653B700E936C5 /* SynchronizedArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedArray.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -906,6 +908,7 @@
 				389171151C6CD8A500A31299 /* CDAKCommonUtility.swift */,
 				384E23131C738E4E009B9DED /* CDAKJSONInstantiable.swift */,
 				384E23301C74A760009B9DED /* CDAKJSONExportable.swift */,
+				EF903A87210653B700E936C5 /* SynchronizedArray.swift */,
 			);
 			path = swift_helpers;
 			sourceTree = "<group>";
@@ -1697,6 +1700,7 @@
 				389170B81C6CD7C800A31299 /* telecom.swift in Sources */,
 				389170A61C6CD7C800A31299 /* lab_result.swift in Sources */,
 				389170B61C6CD7C800A31299 /* social_history.swift in Sources */,
+				EF903A88210653B700E936C5 /* SynchronizedArray.swift in Sources */,
 				3891709A1C6CD7C800A31299 /* communication.swift in Sources */,
 				384E23281C73C7E5009B9DED /* CDAKQRDAPerson.swift in Sources */,
 				389171161C6CD8A500A31299 /* Array+Utility.swift in Sources */,
@@ -1935,7 +1939,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E4B275D491AE4CABC47FF7B2 /* Pods-CDAKit.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1947,7 +1951,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ericwhitley.org.CDAKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = none;
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = full;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -1959,7 +1963,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5440B6F09B325B25FC518484 /* Pods-CDAKit.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1971,7 +1975,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ericwhitley.org.CDAKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = none;
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = full;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;

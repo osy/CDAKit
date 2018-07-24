@@ -28,6 +28,10 @@ open class CDAKPerson: CDAKPersonable, CDAKJSONInstantiable {
   ///telecoms
   open var telecoms: [CDAKTelecom] = [CDAKTelecom]()
 
+    open var description: String {
+        return "prefix: \(prefix ?? ""), given_name: \(given_name ?? ""), family_name: \(family_name ?? ""), suffix: \(suffix ?? "")"
+    }
+
   // MARK: - Initializers
   public init(prefix: String? = nil, given_name: String? = nil, family_name: String? = nil, suffix: String? = nil, addresses: [CDAKAddress] = [], telecoms: [CDAKTelecom] = []){
     self.prefix = prefix

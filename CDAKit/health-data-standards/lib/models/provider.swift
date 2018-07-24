@@ -43,7 +43,6 @@ open class CDAKProvider: CDAKPersonable, CDAKJSONInstantiable, Hashable, Equatab
   ///CDA identifiers.  Contains NPI if supplied.
   open var cda_identifiers: [CDAKCDAIdentifier] = [CDAKCDAIdentifier]()
   
-
   /**
    
    From [Integrating the Healthcare Enterprise Wiki](http://wiki.ihe.net/index.php?title=1.3.6.1.4.1.19376.1.5.3.1.2.3#.3Ccode_code.3D.27_.27_displayName.3D.27_.27_codeSystem.3D.27_.27_codeSystemName.3D.27_.27.2F.3E):
@@ -210,10 +209,6 @@ open class CDAKProvider: CDAKPersonable, CDAKJSONInstantiable, Hashable, Equatab
       let p = resolve_function(provider_hash, patient ?? nil)
       return p
     } else {
-      //let p = CDAKGlobals.sharedInstance.CDAKProviders.filter({ $0.npi == nil }).first
-      //print("resolve_provider matched hash placeholder")
-      //print("resolve_provider matched hash: {\(provider_hash)} to provider: {\(p)}")
-      //return p
       return nil
     }
   }
@@ -223,25 +218,27 @@ open class CDAKProvider: CDAKPersonable, CDAKJSONInstantiable, Hashable, Equatab
   // MARK: Standard properties
   ///Debugging description
   open var description: String {
-    return "Provider => prefix: \(String(describing: prefix)), given_name: \(String(describing: given_name)), family_name: \(String(describing: family_name)), suffix: \(String(describing: suffix)), npi: \(String(describing: npi)), specialty: \(String(describing: specialty)), phone: \(String(describing: phone)), organization: \(String(describing: organization)), cda_identifiers: \(cda_identifiers), addresses: \(addresses), telecoms: \(telecoms), code: \(String(describing: code))"
+    return "Provider => prefix: \(prefix ?? "")), given_name: \(given_name ?? ""), family_name: \(family_name ?? ""), suffix: \(suffix ?? ""), npi: \(npi ?? ""), specialty: \(specialty ?? ""), phone: \(phone ?? ""), organization: \(organization?.description ?? ""), cda_identifiers: \(cda_identifiers), addresses: \(addresses), telecoms: \(telecoms), code: \(code?.description ?? "")"
   }
-
-  
 }
 
 extension CDAKProvider {
   ///Removed a given provider from the global collection
-  class func removeProvider(_ provider: CDAKProvider) {
-    var matching_idx: Int?
-    for (i, p) in CDAKGlobals.sharedInstance.CDAKProviders.enumerated() {
-      if p == provider {
-        matching_idx = i
-      }
+    class func removeProvider(_ provider: CDAKProvider) {
+        var matching_idx: Int?
+    
+        for (i, p) in CDAKGlobals.sharedInstance.CDAKProviders.enumerated() {
+            if p == provider {
+                matching_idx = i
+                break;
+            }
+        }
+        if let matching_idx = matching_idx {
+            DispatchQueue.main.async {
+                CDAKGlobals.sharedInstance.CDAKProviders.remove(at: matching_idx)
+            }
+        }
     }
-    if let matching_idx = matching_idx {
-      CDAKGlobals.sharedInstance.CDAKProviders.remove(at: matching_idx)
-    }
-  }
 }
 
 extension CDAKProvider {

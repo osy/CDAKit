@@ -16,7 +16,7 @@ open class CDAKQRDADevice {
 
 extension CDAKQRDADevice: CustomStringConvertible {
   public var description: String {
-    return "CDAKQRDADevice => name:\(name), model:\(model)"
+    return "CDAKQRDADevice => name:\(name ?? ""), model:\(model ?? "")"
   }
 }
 
