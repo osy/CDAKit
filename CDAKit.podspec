@@ -21,6 +21,9 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '11.0'
   s.ios.deployment_target = "11.0"
   s.requires_arc = true
+  s.xcconfig = {
+    'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2'
+  }
 
   s.source_files = 'CDAKit/**/*.swift'
   s.resource_bundles = {
