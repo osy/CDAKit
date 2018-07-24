@@ -153,7 +153,7 @@ class CDAKCommonUtility {
   {
     let data = CDAKCommonUtility.load_xml_data_from_file(filename)
     
-    if let xml = NSString(data: data, encoding: String.Encoding.utf8.rawValue) as? String
+    if let xml = NSString(data: data, encoding: String.Encoding.utf8.rawValue) as String?
     {
       return xml
     }
@@ -214,7 +214,7 @@ class CDAKCommonUtility {
     if JSONSerialization.isValidJSONObject(jsonDict) { // True
       do {
         let rawData = try JSONSerialization.data(withJSONObject: jsonDict, options: .prettyPrinted)
-        let jsonString = NSString(data: rawData, encoding: String.Encoding.utf8.rawValue) as? String
+        let jsonString = NSString(data: rawData, encoding: String.Encoding.utf8.rawValue) as String?
         return jsonString // NSString(data: rawData, encoding: String.Encoding.utf8.rawValue) as? String
       } catch let error as NSError {
         print(error)

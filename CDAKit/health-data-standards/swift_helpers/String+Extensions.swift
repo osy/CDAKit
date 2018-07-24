@@ -21,7 +21,7 @@ extension String {
   }
   
   subscript (r: Range<Int>) -> String {
-    return substring(with: (self.index(startIndex, offsetBy: r.lowerBound) ..< self.index(startIndex, offsetBy: r.upperBound)))
+    return String(self[self.index(startIndex, offsetBy: r.lowerBound) ..< self.index(startIndex, offsetBy: r.upperBound)])
   }
 
     func index(from: Int) -> Index {
@@ -30,17 +30,17 @@ extension String {
 
     func substring(from: Int) -> String {
         let fromIndex = index(from: from)
-        return self.substring(from: fromIndex)
+        return String(self[fromIndex...])
     }
 
     func substring(to: Int) -> String {
         let toIndex = index(from: to)
-        return self.substring(to: toIndex)
+        return String(self[..<toIndex])
     }
 
     func substring(with r: Range<Int>) -> String {
         let startIndex = index(from: r.lowerBound)
         let endIndex = index(from: r.upperBound)
-        return self.substring(with: startIndex..<endIndex)
+        return String(self[startIndex..<endIndex])
     }
 }
