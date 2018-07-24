@@ -15,13 +15,10 @@ Stores and manages all cross-record data and settings for CDA import and export
 */
 open class CDAKGlobals {
 
-  ///allows access to all global properties
-  open static let sharedInstance = CDAKGlobals()
-  
-  fileprivate init() {
-    //CDAKDefaultMetadata = CDAKQRDAHeader()
-    //CDAKDefaultMetadata.confidentiality = .Normal
-  }
+    // Allows access to all global properties
+    open static let sharedInstance = CDAKGlobals()
+    
+  fileprivate init() {}
 
   /**
    If you'd like to globally apply organizational metadata to your CDA headers for all CDA documents you can inject that metadata here.
@@ -51,12 +48,12 @@ open class CDAKGlobals {
    - Version 1.0.1: Removed public and set to internal
   
    */
-  internal var allProviders: [CDAKProvider] {
+  internal var allProviders: SynchronizedArray<CDAKProvider> {
     get {
       return CDAKProviders
     }
   }
-  var CDAKProviders = [CDAKProvider]()
+  var CDAKProviders = SynchronizedArray<CDAKProvider>()
 
   /**
    Returns all records imported during all sessions

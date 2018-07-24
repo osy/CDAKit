@@ -309,6 +309,7 @@
 		902E92565FF505C545AB58D8 /* Pods_CDAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FDAC72237DF962DB8F4084C /* Pods_CDAKit.framework */; };
 		B648D91DC0D0A5DA1C8A7861 /* Pods_CDAKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2659CE5B586D31D29E7610E8 /* Pods_CDAKitTests.framework */; };
 		EF903A88210653B700E936C5 /* SynchronizedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF903A87210653B700E936C5 /* SynchronizedArray.swift */; };
+		EF903A8A21076E9B00E936C5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = EF903A8921076E9B00E936C5 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -634,6 +635,7 @@
 		B3721CB6B043AD64FC0ED757 /* Pods-CDAKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDAKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CDAKitTests/Pods-CDAKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E4B275D491AE4CABC47FF7B2 /* Pods-CDAKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDAKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CDAKit/Pods-CDAKit.debug.xcconfig"; sourceTree = "<group>"; };
 		EF903A87210653B700E936C5 /* SynchronizedArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedArray.swift; sourceTree = "<group>"; };
+		EF903A8921076E9B00E936C5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -720,6 +722,7 @@
 		389170271C6CC1EE00A31299 = {
 			isa = PBXGroup;
 			children = (
+				EF903A8921076E9B00E936C5 /* .gitignore */,
 				38BC98111C7C95C100E8F2F4 /* github_assets */,
 				38359E071C7B774400CCC036 /* CDAKit.podspec */,
 				38359E081C7B774400CCC036 /* LICENSE.txt */,
@@ -1478,6 +1481,7 @@
 				389171371C6CD8BA00A31299 /* c32_conditions_no_current.c32.mustache in Resources */,
 				3891715D1C6CD8D200A31299 /* ccda_encounters.ccda.mustache in Resources */,
 				38BE32BC1C81002F002AEC25 /* c32_provider_performer.c32.mustache in Resources */,
+				EF903A8A21076E9B00E936C5 /* .gitignore in Resources */,
 				38FCF8D81C74F8DA0040979E /* cat1_telecom.cat1.mustache in Resources */,
 				3852E2FD1C8472B700F1B57D /* ccda_values.ccda.mustache in Resources */,
 				3891715A1C6CD8D200A31299 /* ccda_code_with_reference.ccda.mustache in Resources */,
