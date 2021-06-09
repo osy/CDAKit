@@ -397,7 +397,7 @@ open class CDAKEntry: NSObject , CDAKThingWithCodes, CDAKPropertyAddressable, CD
   
   // MARK: Standard properties
   ///Internal object hash value
-  override open var hashValue: Int {
+  override open var hash: Int {
     //FIX_ME: - not using the hash - just using native properties
     
     var hv: Int

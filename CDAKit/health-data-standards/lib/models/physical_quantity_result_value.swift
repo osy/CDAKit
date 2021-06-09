@@ -39,7 +39,7 @@ open class CDAKPhysicalQuantityResultValue: CDAKResultValue {
 
   // MARK: Standard properties
   ///hash value for comparing objects
-  override open var hashValue: Int {
+  override open var hash: Int {
     return "\(scalar ?? "")\(units ?? "")".hashValue
   }
   
