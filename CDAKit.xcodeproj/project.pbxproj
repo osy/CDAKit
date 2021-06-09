@@ -1413,6 +1413,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 389170271C6CC1EE00A31299;
@@ -1614,7 +1615,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CDAKitTests/Pods-CDAKitTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-CDAKitTests/Pods-CDAKitTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Fuzi/Fuzi.framework",
 				"${BUILT_PRODUCTS_DIR}/GRMustache.swift/Mustache.framework",
 				"${BUILT_PRODUCTS_DIR}/Try/Try.framework",
@@ -1627,7 +1628,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CDAKitTests/Pods-CDAKitTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CDAKitTests/Pods-CDAKitTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E3D409D33B05989FC3BC310B /* [CP] Check Pods Manifest.lock */ = {
@@ -1943,7 +1944,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E4B275D491AE4CABC47FF7B2 /* Pods-CDAKit.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1971,7 +1971,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5440B6F09B325B25FC518484 /* Pods-CDAKit.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1999,7 +1998,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B3721CB6B043AD64FC0ED757 /* Pods-CDAKitTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = E22XJ7D3WH;
 				INFOPLIST_FILE = CDAKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -2014,7 +2012,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3584B78321E453821B9F825B /* Pods-CDAKitTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = E22XJ7D3WH;
 				INFOPLIST_FILE = CDAKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
     ]
   }
   s.frameworks = 'HealthKit'
-  s.dependency 'GRMustache.swift', '2.0.0'
-  s.dependency 'Fuzi', '~> 2.1.0'
-  s.dependency 'Try', '~> 2.1.0'
+  s.dependency 'GRMustache.swift', '3.0.1'
+  s.dependency 'Fuzi', '~> 3.1.3'
+  s.dependency 'Try', '~> 2.1.1'
 end
